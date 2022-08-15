@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+body {
+  font-family: 'Lato', sans-serif; }
+
+p {
+  margin-bottom: 0; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    color: #198754 !important;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s; }
+
+code {
+  font-family: 'Roboto Mono', monospace; }
+
+.font-mono {
+  font-family: 'Lato', sans-serif; }
+
+.fs-7 {
+  font-size: 14px; }
+
+.fs-8 {
+  font-size: 12px; }
+
+.hover-light:hover {
+  background-color: #CED4DA !important;
+  border: 0;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s; }
+
+.navbar {
+  min-width: 296px;
+  position: fixed; }
+  .navbar-brand a {
+    background-image: url(https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week5/logo-ANSWER.svg);
+    background-repeat: no-repeat;
+    display: block;
+    width: 151px;
+    height: 40px;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap; }
+    .navbar-brand a:hover {
+      opacity: 0.6; }
+  .navbar .nav-link:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 4px;
+    height: 32px;
+    border-left: 4px solid #198754; }
+
+.user-photo {
+  width: 40px;
+  height: 40px; }
+
+.main {
+  margin-left: 296px; }
+
+[aria-expanded="true"] .expand-more {
+  display: none; }
+
+[aria-expanded="true"] .expand-less {
+  display: inline-block; }
+
+[aria-expanded="false"] .expand-more {
+  display: inline-block; }
+
+[aria-expanded="false"] .expand-less {
+  display: none; }
+
+.list-group-item.active {
+  color: #212529 !important;
+  background-color: #F8F9FA !important;
+  border-color: #CED4DA !important; }
+
+.list-style-none {
+  list-style: none; }
+
+.reply-area {
+  height: 263px; }
+
+[aria-expanded="true"] .expand-more {
+  display: none; }
+
+[aria-expanded="true"] .expand-less {
+  display: inline-block; }
+
+[aria-expanded="false"] .expand-more {
+  display: inline-block; }
+
+[aria-expanded="false"] .expand-less {
+  display: none; }
+
+.view-admin-photo {
+  background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week5/emir.jpeg?raw=true);
+  background-size: cover;
+  background-position: center;
+  width: 141px; }
+
+/*# sourceMappingURL=all.css.map */
