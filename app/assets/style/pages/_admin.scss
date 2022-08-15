@@ -1,0 +1,25 @@
+// dropdown icon toggle效果
+// 利用a標籤 aria-expanded屬性
+[aria-expanded="true"]{
+    .expand-more{
+        display: none;
+    }
+    .expand-less{
+        display: inline-block;
+    }
+}
+[aria-expanded="false"]{
+    .expand-more{
+        display: inline-block;
+    }
+    .expand-less{
+        display: none;
+    }
+}
+
+.view-admin-photo{
+    background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week5/emir.jpeg?raw=true);
+    background-size: cover;
+    background-position: center;
+    width: 141px;
+}

@@ -1,0 +1,401 @@
+---
+title: Admin | 後台系統
+layout: ./app/layout.ejs
+engine: ejs
+current: admin
+---
+
+<header class="container p-3 mb-4 d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+        <h1 class="fs-4 fw-bold me-5">Admin</h1>
+
+        <!-- add new admin Button trigger modal -->
+        <a type="button" class="link-dark d-flex align-items-center fw-bold" data-bs-toggle="modal"
+            data-bs-target="#addNewAdmin">
+            <span class="material-icons text-success pe-2">add</span>Add New Admin
+        </a>
+
+    </div>
+    <div>
+        <a href="#" class="link-dark me-4"><span class="material-icons">search</span></a>
+        <a href="#" class="link-dark"><span class="material-icons">notifications_active</span></a>
+    </div>
+</header>
+
+<!-- add new admin Modal start -->
+<div class="modal fade" id="addNewAdmin" tabindex="-1" aria-labelledby="addNewAdmin" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content text-dark">
+            <div class="modal-header">
+                <h2 class="modal-title fs-4 fw-bold" id="addNewAdmin">New Admin</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="post">
+                    <!-- account -->
+                    <div class="pb-4 border-bottom">
+                        <h3 class="fs-5 fw-bold mb-3">Account</h3>
+                        <div class="mb-3">
+                            <label for="addNewAdminName" class="form-label">Name</label>
+                            <input type="name" class="form-control py-3" id="addNewAdminName" required>
+                        </div>
+                        <div>
+                            <label for="addNewAdminEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control py-3" id="addNewAdminEmail" required>
+                        </div>
+                    </div>
+                    <!-- verification -->
+                    <div class="py-4 border-bottom">
+                        <h3 class="fs-5 fw-bold mb-3">Verification</h3>
+                        <p class="fw-bold d-flex align-items-center mb-3"><span
+                                class="material-icons text-danger me-2 fs-5">warning</span>Unverified</p>
+                        <button class="hover-light text-success border bg-white fw-bold w-100 py-3" type="button">Send
+                            Verification Mail</button>
+                    </div>
+                    <!-- access level -->
+                    <div class="py-4 border-bottom">
+                        <h3 class="fs-5 fw-bold mb-3">Access Level</h3>
+                        <div class="dropdown">
+                            <button
+                                class="btn btn-outline-secondary dropdown-toggle w-100 d-flex justify-content-between align-items-center py-3"
+                                type="button" id="addNewAccessLevelDropdown" data-bs-toggle="dropdown"
+                                aria-expanded="false" aria-required="true">
+                                -Choose access level-
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="addNewAccessLevelDropdown">
+                                <li><a class="dropdown-item" href="#">Admin</a></li>
+                                <li><a class="dropdown-item" href="#">Upper</a></li>
+                                <li><a class="dropdown-item" href="#">Manager</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- custom access -->
+                    <div class="py-4">
+                        <h3 class="fs-5 fw-bold mb-3">Custom Access</h3>
+                        <div class="list-group">
+                            <label class="list-group-item border-0 ps-0">
+                                <input class="form-check-input me-1" type="checkbox" value="Lecture">
+                                Lecture
+                            </label>
+                            <label class="list-group-item border-0 ps-0">
+                                <input class="form-check-input me-1" type="checkbox" value="Coupon">
+                                Coupon
+                            </label>
+                            <label class="list-group-item border-0 ps-0">
+                                <input class="form-check-input me-1" type="checkbox" value="Message">
+                                Message
+                            </label>
+                            <label class="list-group-item border-0 ps-0">
+                                <input class="form-check-input me-1" type="checkbox" value="Setting">
+                                Setting
+                            </label>
+                            <label class="list-group-item border-0 ps-0">
+                                <input class="form-check-input me-1" type="checkbox" value="Task Menu">
+                                Task Menu
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success px-4" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-success px-4">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- add new admin Modal end -->
+
+<section class="container mb-5">
+    <!-- table start -->
+    <table class="table table-hover text-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID<span class="text-success material-icons align-text-top">arrow_downward</span></th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Verified</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="align-middle">
+                <th scope="row" class="fw-normal">#1</th>
+                <td>Emir Wicks</td>
+                <td>emir.wicks@mail.com</td>
+                <td>Yes</td>
+                <td class="py-3 pe-0 text-end">
+                    <a class="link-dark me-4" type="button" data-bs-toggle="modal" data-bs-target="#viewAdmin"><span
+                            class="material-icons align-text-top">visibility</span></a>
+                    <a class="link-dark" type="button" data-bs-toggle="modal" data-bs-target="#editAdmin"><span
+                            class="material-icons align-text-top">edit</span></a>
+                </td>
+            </tr>
+            <tr class="align-middle">
+                <th scope="row" class="fw-normal">#2</th>
+                <td>Zaina Goldsmith</td>
+                <td>zaina.goldsmith@mail.com</td>
+                <td>Yes</td>
+                <td class="py-3 pe-0 text-end">
+                    <a class="link-dark me-4" type="button" data-bs-toggle="modal" data-bs-target="#viewAdmin"><span
+                            class="material-icons align-text-top">visibility</span></a>
+                    <a class="link-dark" type="button" data-bs-toggle="modal" data-bs-target="#editAdmin"><span
+                            class="material-icons align-text-top">edit</span></a>
+                </td>
+            </tr>
+            <tr class="align-middle">
+                <th scope="row" class="fw-normal">#3</th>
+                <td>Mahima Lopez</td>
+                <td>mahima.lopez@mail.com</td>
+                <td>Yes</td>
+                <td class="py-3 pe-0 text-end">
+                    <a class="link-dark me-4" type="button" data-bs-toggle="modal" data-bs-target="#viewAdmin"><span
+                            class="material-icons align-text-top">visibility</span></a>
+                    <a class="link-dark" type="button" data-bs-toggle="modal" data-bs-target="#editAdmin"><span
+                            class="material-icons align-text-top">edit</span></a>
+                </td>
+            </tr>
+            <tr class="align-middle">
+                <th scope="row" class="fw-normal">#4</th>
+                <td>Pharrell Murray</td>
+                <td>pharrell.murray@mail.com</td>
+                <td>Yes</td>
+                <td class="py-3 pe-0 text-end">
+                    <a class="link-dark me-4" type="button" data-bs-toggle="modal" data-bs-target="#viewAdmin"><span
+                            class="material-icons align-text-top">visibility</span></a>
+                    <a class="link-dark" type="button" data-bs-toggle="modal" data-bs-target="#editAdmin"><span
+                            class="material-icons align-text-top">edit</span></a>
+                </td>
+            </tr>
+            <tr class="align-middle">
+                <th scope="row" class="fw-normal">#5</th>
+                <td>Annika Mcbride</td>
+                <td>annika.mcbride@mail.com</td>
+                <td>Yes</td>
+                <td class="py-3 pe-0 text-end">
+                    <a class="link-dark me-4" type="button" data-bs-toggle="modal" data-bs-target="#viewAdmin"><span
+                            class="material-icons align-text-top">visibility</span></a>
+                    <a class="link-dark" type="button" data-bs-toggle="modal" data-bs-target="#editAdmin"><span
+                            class="material-icons align-text-top">edit</span></a>
+                </td>
+            </tr>
+            <tr class="align-middle">
+                <th scope="row" class="fw-normal">#6</th>
+                <td>Fatimah Clark</td>
+                <td>fatimah.clark@mail.com</td>
+                <td>Yes</td>
+                <td class="py-3 pe-0 text-end">
+                    <a class="link-dark me-4" type="button" data-bs-toggle="modal" data-bs-target="#viewAdmin"><span
+                            class="material-icons align-text-top">visibility</span></a>
+                    <a class="link-dark" type="button" data-bs-toggle="modal" data-bs-target="#editAdmin"><span
+                            class="material-icons align-text-top">edit</span></a>
+                </td>
+            </tr>
+            <tr class="align-middle">
+                <th scope="row" class="fw-normal">#7</th>
+                <td>Klaudia Rhodes</td>
+                <td>klaudia.rhodes@mail.com</td>
+                <td>Yes</td>
+                <td class="py-3 pe-0 text-end">
+                    <a class="link-dark me-4" type="button" data-bs-toggle="modal" data-bs-target="#viewAdmin"><span
+                            class="material-icons align-text-top">visibility</span></a>
+                    <a class="link-dark" type="button" data-bs-toggle="modal" data-bs-target="#editAdmin"><span
+                            class="material-icons align-text-top">edit</span></a>
+                </td>
+            </tr>
+            <tr class="align-middle">
+                <th scope="row" class="fw-normal">#8</th>
+                <td>Tillie Lucero</td>
+                <td>tillie.lucero@mail.com</td>
+                <td>Yes</td>
+                <td class="py-3 pe-0 text-end">
+                    <a class="link-dark me-4" type="button" data-bs-toggle="modal" data-bs-target="#viewAdmin"><span
+                            class="material-icons align-text-top">visibility</span></a>
+                    <a class="link-dark" type="button" data-bs-toggle="modal" data-bs-target="#editAdmin"><span
+                            class="material-icons align-text-top">edit</span></a>
+                </td>
+            </tr>
+            <tr class="align-middle">
+                <th scope="row" class="fw-normal">#9</th>
+                <td>Sabrina Stephenson</td>
+                <td>sabrina.stephenson@mail.com</td>
+                <td>Yes</td>
+                <td class="py-3 pe-0 text-end">
+                    <a class="link-dark me-4" type="button" data-bs-toggle="modal" data-bs-target="#viewAdmin"><span
+                            class="material-icons align-text-top">visibility</span></a>
+                    <a class="link-dark" type="button" data-bs-toggle="modal" data-bs-target="#editAdmin"><span
+                            class="material-icons align-text-top">edit</span></a>
+                </td>
+            </tr>
+            <tr class="align-middle">
+                <th scope="row" class="fw-normal">#10</th>
+                <td>Annie Smith</td>
+                <td>annie.smith@mail.com</td>
+                <td>Yes</td>
+                <td class="py-3 pe-0 text-end">
+                    <a class="link-dark me-4" type="button" data-bs-toggle="modal" data-bs-target="#viewAdmin"><span
+                            class="material-icons align-text-top">visibility</span></a>
+                    <a class="link-dark" type="button" data-bs-toggle="modal" data-bs-target="#editAdmin"><span
+                            class="material-icons align-text-top">edit</span></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- table end -->
+</section>
+
+<!-- view admin Modal start -->
+<div class="modal fade" id="viewAdmin" tabindex="-1" aria-labelledby="viewAdmin" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="d-flex p-4">
+                    <div class="view-admin-photo flex-shrink-0 rounded-1"></div>
+                    <div class="flex-grow-1 ms-3 text-dark">
+                        <p class="mb-2">#1</p>
+                        <p class="mb-0">Admin</p>
+                        <h2 class="fw-bold fs-4 mb-2">Emir Wicks</h2>
+                        <p class="text-secondary fs-7 mb-3">emir.wicks@mail.com</p>
+                        <span class="bg-light fs-7 px-2 py-1">Verified</span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-between align-items-end">
+                        <button type="button" class="btn-close fs-6" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <a class="link-dark d-flex fw-bold" data-bs-toggle="collapse" href="#veiwAdminCollapse"
+                            role="button" aria-expanded="false" aria-controls="veiwAdminCollapse">
+                            <span class="material-icons text-success expand-more ms-2">expand_more</span>
+                            <span class="material-icons text-success expand-less ms-2">expand_less</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="collapse p-4" id="veiwAdminCollapse">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-outline-danger px-4 me-3">Deactivate</button>
+                        <button type="button" class="btn btn-success px-4">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- view admin Modal end -->
+
+<!-- edit admin Modal start -->
+<div class="modal fade" id="editAdmin" tabindex="-1" aria-labelledby="editAdmin" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-4 fw-bold" id="addNewAdmin">Edit Admin</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="post">
+                    <!-- account -->
+                    <div class="pb-4 border-bottom">
+                        <h3 class="fs-5 fw-bold mb-3">Account</h3>
+                        <div class="mb-3">
+                            <label for="editAdminName" class="form-label">Name</label>
+                            <input type="name" class="form-control py-3 border-0" id="editAdminName" value="Emir Wicks"
+                                readonly>
+                        </div>
+                        <div>
+                            <label for="editAdminEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control py-3 border-0" id="editAdminEmail"
+                                value="emir.wicks@mail.com" readonly>
+                        </div>
+                    </div>
+                    <!-- verification -->
+                    <div class="py-4 border-bottom">
+                        <h3 class="fs-5 fw-bold mb-3">Verification</h3>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="fw-bold d-flex align-items-center"><span
+                                    class="material-icons text-success me-2 fs-5">check_circle</span>Verified</p>
+                            <p class="text-dark fs-7">2020/4/12</p>
+                        </div>
+                        <button class="fw-bold w-100 py-3 border bg-white" type="button" disabled>Send
+                            Verification Mail</button>
+                    </div>
+                    <!-- access level -->
+                    <div class="py-4 border-bottom">
+                        <h3 class="fs-5 fw-bold mb-3">Access Level</h3>
+                        <div class="dropdown">
+                            <button
+                                class="btn btn-outline-secondary dropdown-toggle w-100 d-flex justify-content-between align-items-center py-3 text-dark"
+                                type="button" id="editAccessLevelDropdown" data-bs-toggle="dropdown"
+                                aria-expanded="false" aria-required="true">
+                                Admin
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="editAccessLevelDropdown">
+                                <li><a class="dropdown-item" href="#">Admin</a></li>
+                                <li><a class="dropdown-item" href="#">Upper</a></li>
+                                <li><a class="dropdown-item" href="#">Manager</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- custom access -->
+                    <div class="py-4 border-bottom">
+                        <h3 class="fs-5 fw-bold mb-3">Custom Access</h3>
+                        <div class="list-group">
+                            <label class="list-group-item border-0 ps-0">
+                                <input class="form-check-input me-1" type="checkbox" value="Lecture">
+                                Lecture
+                            </label>
+                            <label class="list-group-item border-0 ps-0">
+                                <input class="form-check-input me-1" type="checkbox" value="Coupon">
+                                Coupon
+                            </label>
+                            <label class="list-group-item border-0 ps-0">
+                                <input class="form-check-input me-1" type="checkbox" value="Message">
+                                Message
+                            </label>
+                            <label class="list-group-item border-0 ps-0">
+                                <input class="form-check-input me-1" type="checkbox" value="Setting">
+                                Setting
+                            </label>
+                            <label class="list-group-item border-0 ps-0">
+                                <input class="form-check-input me-1" type="checkbox" value="Task Menu">
+                                Task Menu
+                            </label>
+                        </div>
+                    </div>
+                    <!-- deactivate account-->
+                    <div class="py-4">
+                        <h3 class="fs-5 fw-bold mb-3">Deactivate Account</h3>
+                        <p class="text-danger d-flex align-items-center mb-3"><span
+                                class="material-icons me-2 fs-5">warning</span>This cannot be undone!</p>
+                        <button class="fw-bold w-100 py-3 btn btn-outline-danger" type="button">Deactivate This
+                            Account</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success px-4" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-success px-4">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Edit Modal end -->
+
+<div class="container">
+
+    <!-- pagination start -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+            <li class="page-item">
+                <a class="page-link link-success border-success rounded-0" href="#" aria-label="Previous">
+                    <span class="material-icons align-middle fs-6">navigate_before</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link text-dark border-success" href="#">1</a></li>
+            <li class="page-item"><a class="page-link text-white border-success bg-success" href="#">2</a></li>
+            <li class="page-item"><a class="page-link text-dark border-success" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link link-success border-success rounded-0" href="#" aria-label="Next">
+                    <span class="material-icons align-middle fs-6">navigate_next</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- pagination end -->
+
+</div>

@@ -1,8 +1,8 @@
 ---
-title: Assignment | 後台系統
+title: Reply-Assignment | 後台系統
 layout: ./app/layout.ejs
 engine: ejs
-current: index
+current: reply
 ---
 
 
@@ -12,8 +12,8 @@ current: index
 
         <!-- dropdown start -->
         <div class="dropdown">
-            <a class="link-dark d-flex fw-bold" href="#" role="button" id="courseDropdown"
-                data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="link-dark d-flex fw-bold" href="#" role="button" id="courseDropdown" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 All course
                 <span class="material-icons text-success expand-more ms-2">expand_more</span>
                 <span class="material-icons text-success expand-less ms-2">expand_less</span>
@@ -41,14 +41,14 @@ current: index
     <div class="d-flex justify-content-between align-items-center mb-1">
 
         <!-- collapse start -->
-        <a class="link-dark d-flex fw-bold" data-bs-toggle="collapse" href="#questionCollapse"
-            role="button" aria-expanded="true" aria-controls="questionCollapse">
+        <a class="link-dark d-flex fw-bold" data-bs-toggle="collapse" href="#questionCollapse" role="button"
+            aria-expanded="true" aria-controls="questionCollapse">
             All (4)
             <span class="material-icons text-success expand-more ms-2">expand_more</span>
             <span class="material-icons text-success expand-less ms-2">expand_less</span>
         </a>
         <!-- collapse end -->
-        
+
         <p class="text-secondary fs-8">2 comments</p>
     </div>
 
@@ -102,7 +102,7 @@ current: index
                 <div class="tab-pane fade show active" id="list-q1" role="tabpanel" aria-labelledby="list-q1-list">
 
                     <!-- card start -->
-                    <div class="card mb-3">
+                    <div class="card rounded-0 border-bottom-0">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <div>
                                 <h2 class="fs-8">Chapter Assignment 2</h2>
@@ -112,7 +112,7 @@ current: index
                             </a>
                         </div>
                         <div class="card-body">
-                            <div class="d-flex mb-4">
+                            <div class="d-flex mb-2">
                                 <div class="flex-shrink-0">
                                     <img class="user-photo rounded-circle"
                                         src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week5/emilywang.jpeg"
@@ -133,40 +133,18 @@ current: index
                                     </a>
                                 </div>
                             </div>
-                            <div class="d-flex text-dark">
-                                <div class="flex-shrink-0">
-                                    <img class="user-photo rounded-circle"
-                                        src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week5/andychen.jpeg"
-                                        alt="Andy Chen photo">
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <h4 class="card-title fs-6">Andy Chen (You)<br><time
-                                            class="fs-8 text-secondary">13:24 AM (1 hours ago)</time></h4>
-                                        <div>
-                                            <a class="link-dark me-4" href="#">
-                                                <span class="material-icons">grade</span></a>
-                                            <a class="link-dark" href="./reply.html"><span class="material-icons">edit</span></a>
-                                        </div>
-                                    </div>
-                                    <p class="card-text mb-3">Hi David, by default, an image is rendered inline,
-                                        like a letter so it sits on the same line that a, b, c and d sit on. There
-                                        is space below that line for the descenders you find on letters like g, j, p
-                                        and q. <br><br>You can: <br><br>
-                                    <ul>
-                                        <li>adjust the <code class="text-success bg-light px-1">vertical-align</code> of
-                                            the
-                                            image to position it elsewhere (e.g. the <code
-                                                class="text-success bg-light px-1">middle</code> ) or</li>
-                                        <li>change the <code class="text-success bg-light px-1">display</code> so it
-                                            isn’t inline.</li>
-                                    </ul>
-                                    </p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <!-- card end -->
+
+                    <!-- editor start -->
+                    <textarea name="editor" id="editor" placeholder="Reply an answer…" cols="30" rows="10"></textarea>
+                    <!-- editor end -->
+
+                    <div class="d-flex justify-content-end mt-3">
+                        <button type="button" class="btn btn-outline-success px-4 me-3">Cancel</button>
+                        <button type="button" class="btn btn-success px-4">Reply</button>
+                    </div>
 
                 </div>
                 <!-- question 2 -->
@@ -183,7 +161,7 @@ current: index
                             </a>
                         </div>
                         <div class="card-body">
-                            <div class="d-flex mb-4">
+                            <div class="d-flex mb-2">
                                 <div class="flex-shrink-0">
                                     <img class="user-photo rounded-circle"
                                         src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week5/emilywang.jpeg"
@@ -204,36 +182,38 @@ current: index
                                     </a>
                                 </div>
                             </div>
-                            <div class="d-flex text-dark">
-                                <div class="flex-shrink-0">
-                                    <img class="user-photo rounded-circle"
-                                        src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week5/andychen.jpeg"
-                                        alt="Andy Chen photo">
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <h4 class="card-title fs-6">Andy Chen (You)<br><time
-                                            class="fs-8 text-secondary">13:24 AM (1 hours ago)</time></h4>
-                                        <div>
-                                            <a class="link-dark me-4" href="#">
-                                                <span class="material-icons">grade</span></a>
-                                            <a class="link-dark" href="./reply.html"><span class="material-icons">edit</span></a>
-                                        </div>
-                                    </div>
-                                    <p class="card-text mb-3">Hi David, by default, an image is rendered inline,
-                                        like a letter so it sits on the same line that a, b, c and d sit on. There
-                                        is space below that line for the descenders you find on letters like g, j, p
-                                        and q. <br><br>You can: <br><br>
-                                    <ul>
-                                        <li>adjust the <code class="text-success bg-light px-1">vertical-align</code> of
-                                            the
-                                            image to position it elsewhere (e.g. the <code
-                                                class="text-success bg-light px-1">middle</code> ) or</li>
-                                        <li>change the <code class="text-success bg-light px-1">display</code> so it
-                                            isn’t inline.</li>
-                                    </ul>
-                                    </p>
-                                </div>
+                        </div>
+
+                        <div class="card-header d-flex align-items-center gap-4 border-top p-3">
+
+                            <!-- text dropdown start -->
+                            <div class="dropdown">
+                                <a class="dropdown-toggle link-dark fw-bold" href="#" role="button" id="textDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Body Text
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="textDropdown">
+                                    <li><a class="dropdown-item" href="#">Microsoft JhengHei</a></li>
+                                    <li><a class="dropdown-item" href="#">PMingLiU</a></li>
+                                    <li><a class="dropdown-item" href="#">BiauKai</a></li>
+                                </ul>
+                            </div>
+                            <!-- text dropdown end -->
+
+                            <!-- text icons start -->
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">format_bold</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">format_italic</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">list</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">format_list_numbered</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">image</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">insert_link</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">code</span></a>
+                            <!-- text icons end -->
+                        </div>
+                        <div class="reply-area card-body d-flex flex-column justify-content-between">
+                            <p class="text-black-50">Reply an answer…</p>
+                            <div class="align-self-end">
+                                <button type="button" class="btn btn-outline-success px-4 me-3">Cancel</button>
+                                <button type="button" class="btn btn-success px-4">Reply</button>
                             </div>
                         </div>
                     </div>
@@ -254,15 +234,15 @@ current: index
                             </a>
                         </div>
                         <div class="card-body">
-                            <div class="d-flex mb-4">
+                            <div class="d-flex mb-2">
                                 <div class="flex-shrink-0">
                                     <img class="user-photo rounded-circle"
                                         src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week5/emilywang.jpeg"
                                         alt="Emily Wang photo">
                                 </div>
                                 <div class="flex-grow-1 ms-3 pb-4 border-bottom">
-                                    <h4 class="card-title fs-6 mb-3">Tony Wei<br><time class="fs-8 text-secondary">10:38
-                                            AM (4 hours ago)</time></h4>
+                                    <h4 class="card-title fs-6 mb-3">Emily Wang<br><time
+                                            class="fs-8 text-secondary">10:38 AM (4 hours ago)</time></h4>
                                     <p class="card-text mb-3">Hi Teacher, the attached file is my homework of
                                         chapter 2. And here comes a question: Why in the following code the height
                                         of the div is bigger than the
@@ -275,36 +255,38 @@ current: index
                                     </a>
                                 </div>
                             </div>
-                            <div class="d-flex text-dark">
-                                <div class="flex-shrink-0">
-                                    <img class="user-photo rounded-circle"
-                                        src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week5/andychen.jpeg"
-                                        alt="Andy Chen photo">
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <h4 class="card-title fs-6">Andy Chen (You)<br><time
-                                            class="fs-8 text-secondary">13:24 AM (1 hours ago)</time></h4>
-                                        <div>
-                                            <a class="link-dark me-4" href="#">
-                                                <span class="material-icons">grade</span></a>
-                                            <a class="link-dark" href="./reply.html"><span class="material-icons">edit</span></a>
-                                        </div>
-                                    </div>
-                                    <p class="card-text mb-3">Hi David, by default, an image is rendered inline,
-                                        like a letter so it sits on the same line that a, b, c and d sit on. There
-                                        is space below that line for the descenders you find on letters like g, j, p
-                                        and q. <br><br>You can: <br><br>
-                                    <ul>
-                                        <li>adjust the <code class="text-success bg-light px-1">vertical-align</code> of
-                                            the
-                                            image to position it elsewhere (e.g. the <code
-                                                class="text-success bg-light px-1">middle</code> ) or</li>
-                                        <li>change the <code class="text-success bg-light px-1">display</code> so it
-                                            isn’t inline.</li>
-                                    </ul>
-                                    </p>
-                                </div>
+                        </div>
+
+                        <div class="card-header d-flex align-items-center gap-4 border-top p-3">
+
+                            <!-- text dropdown start -->
+                            <div class="dropdown">
+                                <a class="dropdown-toggle link-dark fw-bold" href="#" role="button" id="textDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Body Text
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="textDropdown">
+                                    <li><a class="dropdown-item" href="#">Microsoft JhengHei</a></li>
+                                    <li><a class="dropdown-item" href="#">PMingLiU</a></li>
+                                    <li><a class="dropdown-item" href="#">BiauKai</a></li>
+                                </ul>
+                            </div>
+                            <!-- text dropdown end -->
+
+                            <!-- text icons start -->
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">format_bold</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">format_italic</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">list</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">format_list_numbered</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">image</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">insert_link</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">code</span></a>
+                            <!-- text icons end -->
+                        </div>
+                        <div class="reply-area card-body d-flex flex-column justify-content-between">
+                            <p class="text-black-50">Reply an answer…</p>
+                            <div class="align-self-end">
+                                <button type="button" class="btn btn-outline-success px-4 me-3">Cancel</button>
+                                <button type="button" class="btn btn-success px-4">Reply</button>
                             </div>
                         </div>
                     </div>
@@ -325,14 +307,14 @@ current: index
                             </a>
                         </div>
                         <div class="card-body">
-                            <div class="d-flex mb-4">
+                            <div class="d-flex mb-2">
                                 <div class="flex-shrink-0">
                                     <img class="user-photo rounded-circle"
                                         src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week5/emilywang.jpeg"
                                         alt="Emily Wang photo">
                                 </div>
                                 <div class="flex-grow-1 ms-3 pb-4 border-bottom">
-                                    <h4 class="card-title fs-6 mb-3">Christina Lin<br><time
+                                    <h4 class="card-title fs-6 mb-3">Emily Wang<br><time
                                             class="fs-8 text-secondary">10:38 AM (4 hours ago)</time></h4>
                                     <p class="card-text mb-3">Hi Teacher, the attached file is my homework of
                                         chapter 2. And here comes a question: Why in the following code the height
@@ -346,55 +328,44 @@ current: index
                                     </a>
                                 </div>
                             </div>
-                            <div class="d-flex text-dark">
-                                <div class="flex-shrink-0">
-                                    <img class="user-photo rounded-circle"
-                                        src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week5/andychen.jpeg"
-                                        alt="Andy Chen photo">
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <h4 class="card-title fs-6">Andy Chen (You)<br><time
-                                            class="fs-8 text-secondary">13:24 AM (1 hours ago)</time></h4>
-                                        <div>
-                                            <a class="link-dark me-4" href="#">
-                                                <span class="material-icons">grade</span></a>
-                                            <a class="link-dark" href="./reply.html"><span class="material-icons">edit</span></a>
-                                        </div>
-                                    </div>
-                                    <p class="card-text mb-3">Hi David, by default, an image is rendered inline,
-                                        like a letter so it sits on the same line that a, b, c and d sit on. There
-                                        is space below that line for the descenders you find on letters like g, j, p
-                                        and q. <br><br>You can: <br><br>
-                                    <ul>
-                                        <li>adjust the <code class="text-success bg-light px-1">vertical-align</code> of
-                                            the
-                                            image to position it elsewhere (e.g. the <code
-                                                class="text-success bg-light px-1">middle</code> ) or</li>
-                                        <li>change the <code class="text-success bg-light px-1">display</code> so it
-                                            isn’t inline.</li>
-                                    </ul>
-                                    </p>
-                                </div>
+                        </div>
+
+                        <div class="card-header d-flex align-items-center gap-4 border-top p-3">
+
+                            <!-- text dropdown start -->
+                            <div class="dropdown">
+                                <a class="dropdown-toggle link-dark fw-bold" href="#" role="button" id="textDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Body Text
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="textDropdown">
+                                    <li><a class="dropdown-item" href="#">Microsoft JhengHei</a></li>
+                                    <li><a class="dropdown-item" href="#">PMingLiU</a></li>
+                                    <li><a class="dropdown-item" href="#">BiauKai</a></li>
+                                </ul>
+                            </div>
+                            <!-- text dropdown end -->
+
+                            <!-- text icons start -->
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">format_bold</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">format_italic</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">list</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">format_list_numbered</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">image</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">insert_link</span></a>
+                            <a class="link-dark" href="#"><span class="material-icons align-middle">code</span></a>
+                            <!-- text icons end -->
+                        </div>
+                        <div class="reply-area card-body d-flex flex-column justify-content-between">
+                            <p class="text-black-50">Reply an answer…</p>
+                            <div class="align-self-end">
+                                <button type="button" class="btn btn-outline-success px-4 me-3">Cancel</button>
+                                <button type="button" class="btn btn-success px-4">Reply</button>
                             </div>
                         </div>
                     </div>
                     <!-- card end -->
 
                 </div>
-
-                <!-- arrow & button start -->
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <a class="link-dark me-4" href="#"><span class="material-icons">arrow_back_ios</span></a>
-                        <a class="link-dark" href="#"><span class="material-icons">arrow_forward_ios</span></a>
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-outline-success px-4 me-3">Mark as read</button>
-                        <button type="button" class="btn btn-success px-4">Reply</button>
-                    </div>
-                </div>
-                <!-- arrow & button end -->
             </div>
         </div>
         <!-- 右側對話區塊 end -->
