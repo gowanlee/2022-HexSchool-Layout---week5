@@ -4,12 +4,12 @@
 
 本週學習重點：
 
-1. form標籤
+<b>1. form標籤</b>
   - action指的是要把表單傳送到後端的哪個網址
   - method指表單傳送的方法
     - 表單一率使用`method="post"`是指把整包資料傳送過去
 
-2. input表單標籤
+<b>2. input表單標籤</b>
   - type指輸入格式 例如text、tel、password等
     - `type="submit"`是會把表單送到後端
     - `type="date"`不要用!!!!!!!!
@@ -22,18 +22,18 @@
     - disabled 用 form傳送的話不會帶值，但readonly會
   - 如是必填可加上required(此提示樣式無法客製化)
 
-3. 表單一定要有`<form></form>`、`<input>`、`<input type="submit">`
+<b>3. 表單一定要有`<form></form>`、`<input>`、`<input type="submit">`</b>
 
-4. label標籤
+<b>4. label標籤</b>
   - 加上這標籤可以增加使用者體驗，點擊label標籤裡的文字就會自動對應到input框框裡
   - for一定要跟input的id相同 
   - 如果label標籤裡包input就不用寫for跟id
 
-5. select & radio 預設樣式無法更改，如果要更改只能自己用js重寫樣式功能
+<b>5. select & radio 預設樣式無法更改，如果要更改只能自己用js重寫樣式功能</b>
   - [做出客製化select下拉選單](https://codepen.io/mukul6996/pen/pWjBzV)
   - [做出客製化radio](https://codepen.io/bbodine1/pen/DqdMRy)
 
-6. Bootstrap5
+<b>6. Bootstrap5</b>
   - Bootstrap 的 Reset 是 normalize，不需加入 Meyerweb 的 CSS Reset
   - 正式專案通常都會用本地端不會用cdn的方式
   - list-unstyled可以消除list前面的圓點
@@ -42,8 +42,8 @@
   - img-fluid裡包含`max-width:100%`、`height:auto`
   - [BS5參考文件](https://bootstrap5.hexschool.com/docs/5.1/getting-started/introduction/)
 
-7. base全站設定是放html標籤
+<b>7. base全站設定是放html標籤</b>
 
-8. Material icons提供的較基本，Fontawesom提供的樣式較多
+<b>8. Material icons提供的較基本，Fontawesom提供的樣式較多</b>
 
-9. button、select、option只能用disabled
+<b>9. button、select、option只能用disabled</b>
