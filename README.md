@@ -47,3 +47,24 @@
 <b>8. Material icons提供的較基本，Fontawesom提供的樣式較多</b>
 
 <b>9. button、select、option只能用disabled</b>
+
+-------------------------------------
+ 
+下方提供關於作業細節的建議：
+
+<b>整體</b>
+1. 圖片可以設定 object-fit: cover; 來防止圖片變形
+2. 元素間距要符合設計稿，例如 logo 到 .navbar-nav 的距離應為 32px
+<br>
+<br>
+<br>
+<b>導覽列</b>
+1. navbar 沒有在格線內，不需要使用 .container
+<br>
+<br>
+<br>
+<b>Admin</b>
+1. ID 右方綠色箭頭為可點擊的元素，可用 a 標籤包住
+2. #viewAdmin 中的 Edit 按鈕點擊後要開啟 #editAdmin。
+[作法可參考文件](https://bootstrap5.hexschool.com/docs/5.0/components/modal/#toggle-between-modals)
+3. Edit Admin 跳窗內的 「Access Level」內容可以使用[Bootstrap 的 form-select 製作](https://bootstrap5.hexschool.com/docs/5.0/forms/select/)
