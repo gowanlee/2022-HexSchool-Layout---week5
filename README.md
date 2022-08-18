@@ -65,6 +65,6 @@
 <br>
 <b>Admin</b>
 1. ID 右方綠色箭頭為可點擊的元素，可用 a 標籤包住
-2. #viewAdmin 中的 Edit 按鈕點擊後要開啟 #editAdmin。
+2. #viewAdmin 中的 Edit 按鈕點擊後要開啟 #editAdmin
 [作法可參考文件](https://bootstrap5.hexschool.com/docs/5.0/components/modal/#toggle-between-modals)
 3. Edit Admin 跳窗內的 「Access Level」內容可以使用[Bootstrap 的 form-select 製作](https://bootstrap5.hexschool.com/docs/5.0/forms/select/)
