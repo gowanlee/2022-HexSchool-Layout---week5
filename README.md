@@ -58,11 +58,13 @@
 <br>
 <br>
 <br>
+
 <b>導覽列</b>
 1. navbar 沒有在格線內，不需要使用 .container
 <br>
 <br>
 <br>
+
 <b>Admin</b>
 1. ID 右方綠色箭頭為可點擊的元素，可用 a 標籤包住
 2. #viewAdmin 中的 Edit 按鈕點擊後要開啟 #editAdmin
